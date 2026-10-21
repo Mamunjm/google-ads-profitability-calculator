@@ -3,106 +3,421 @@
 .gapcalc *{box-sizing:border-box}.gapcalc .hero{padding:22px 0 26px}.gapcalc .eyebrow{font-size:13px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.06em}.gapcalc h1{font-size:clamp(30px,5vw,50px);line-height:1.05;margin:8px 0 12px;max-width:900px}.gapcalc .hero p{font-size:18px;line-height:1.55;color:var(--muted);max-width:820px;margin:0}
 .gapcalc .panel,.gapcalc .cta{border:1px solid var(--line);border-radius:20px;background:#fff;padding:22px;margin:18px 0}.gapcalc .section-head{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap}.gapcalc h2{font-size:24px;margin:0 0 5px}.gapcalc .sub{color:var(--muted);font-size:14px;line-height:1.5}.gapcalc .actions{display:flex;gap:10px;flex-wrap:wrap}
 .gapcalc button{min-height:44px;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer}.gapcalc .primary{border:1px solid var(--accent);background:var(--accent);color:#fff}.gapcalc button[disabled]{opacity:.65;cursor:not-allowed}.gapcalc .secondary{border:1px solid var(--line);background:#fff;color:var(--ink)}
-.gapcalc .input-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.gapcalc label{display:block;font-size:14px;font-weight:800;margin-bottom:7px}.gapcalc .unit-wrap{position:relative}.gapcalc .unit-wrap input{padding-left:30px}.gapcalc .unit-wrap.suffix input{padding-left:12px;padding-right:34px}.gapcalc .unit{position:absolute;top:50%;transform:translateY(-50%);left:12px;color:var(--muted);font-weight:800;pointer-events:none}.gapcalc .unit-wrap.suffix .unit{left:auto;right:12px}.gapcalc input,.gapcalc textarea{width:100%;min-height:46px;border:1px solid #cfd4dc;border-radius:10px;padding:11px 12px;font:inherit;background:#fff;color:var(--ink)}.gapcalc input:focus,.gapcalc textarea:focus{outline:3px solid rgba(49,87,213,.14);border-color:var(--accent)}.gapcalc small{display:block;color:var(--muted);line-height:1.4;margin-top:5px}.gapcalc .validation{min-height:20px;color:var(--bad);font-size:13px;margin-top:12px}
-.gapcalc .results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.gapcalc .metric{border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--soft);min-width:0}.gapcalc .metric span{display:block;color:var(--muted);font-size:13px;line-height:1.35;margin-bottom:7px}.gapcalc .metric strong{display:block;font-size:25px;line-height:1.15;overflow-wrap:anywhere}
-.gapcalc .status-row{margin-top:14px;border-radius:14px;padding:16px;background:var(--accent-soft)}.gapcalc .status-pill{display:inline-block;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:900;margin-bottom:8px}.gapcalc .status-pill.good{background:#e8f6ef;color:var(--good)}.gapcalc .status-pill.warn{background:#fff3df;color:var(--warn)}.gapcalc .status-pill.bad{background:#ffebe9;color:var(--bad)}.gapcalc .status-row p{margin:0;color:var(--muted);line-height:1.5}
-.gapcalc .scenario-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}.gapcalc .scenario-inputs{display:grid;grid-template-columns:1fr 1fr;gap:14px}.gapcalc .scenario-result{border:1px solid var(--line);border-radius:16px;padding:18px;background:var(--soft)}.gapcalc .scenario-result .big{font-size:32px;font-weight:900;margin:3px 0}.gapcalc .scenario-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.gapcalc .scenario-stat{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}.gapcalc .scenario-stat span{display:block;color:var(--muted);font-size:12px;margin-bottom:4px}.gapcalc .scenario-stat strong{font-size:18px}.gapcalc .delta{font-weight:800;font-size:14px}.gapcalc .delta.positive{color:var(--good)}.gapcalc .delta.negative{color:var(--bad)}
+.gapcalc .input-group{border:1px solid var(--line);border-radius:16px;padding:18px;background:var(--soft);margin-top:16px}.gapcalc .input-group:first-of-type{margin-top:0}.gapcalc .group-title{font-size:17px;font-weight:900;margin:0 0 4px}.gapcalc .group-copy{font-size:13px;color:var(--muted);line-height:1.5;margin:0 0 14px}.gapcalc .group-note{margin-top:12px;padding:10px 12px;border-radius:10px;background:#fff;border:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.45}.gapcalc .input-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.gapcalc label{display:block;font-size:14px;font-weight:800;margin-bottom:7px}.gapcalc .unit-wrap{position:relative}.gapcalc .unit-wrap input{padding-left:30px}.gapcalc .unit-wrap.suffix input{padding-left:12px;padding-right:34px}.gapcalc .unit{position:absolute;top:50%;transform:translateY(-50%);left:12px;color:var(--muted);font-weight:800;pointer-events:none}.gapcalc .unit-wrap.suffix .unit{left:auto;right:12px}.gapcalc input,.gapcalc textarea{width:100%;min-height:46px;border:1px solid #cfd4dc;border-radius:10px;padding:11px 12px;font:inherit;background:#fff;color:var(--ink)}.gapcalc input:focus,.gapcalc textarea:focus{outline:3px solid rgba(49,87,213,.14);border-color:var(--accent)}.gapcalc small{display:block;color:var(--muted);line-height:1.4;margin-top:5px}.gapcalc .validation{min-height:20px;color:var(--bad);font-size:13px;margin-top:12px}
+.gapcalc .results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.gapcalc .metric{border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--soft);min-width:0}.gapcalc .metric span{display:block;color:var(--muted);font-size:13px;line-height:1.35;margin-bottom:7px}.gapcalc .metric strong{display:block;font-size:25px;line-height:1.15;overflow-wrap:anywhere}.gapcalc .metric small{margin-top:7px;font-size:11px;line-height:1.35}
+.gapcalc .status-row{margin-top:14px;border-radius:14px;padding:16px;background:var(--accent-soft)}.gapcalc .status-pill{display:inline-block;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:900;margin-bottom:8px}.gapcalc .status-pill.good{background:#e8f6ef;color:var(--good)}.gapcalc .status-pill.warn{background:#fff3df;color:var(--warn)}.gapcalc .status-pill.bad{background:#ffebe9;color:var(--bad)}.gapcalc .status-row p{margin:0;color:var(--muted);line-height:1.5}.gapcalc .recommendation{margin-top:14px;border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--soft)}.gapcalc .recommendation .rec-label{font-size:13px;font-weight:900;color:var(--accent);margin-bottom:6px}.gapcalc .recommendation p{margin:0;color:var(--muted);line-height:1.55}.gapcalc .scenario-help{display:block;color:var(--muted);font-size:12px;line-height:1.45;margin-top:6px}
+.gapcalc .scenario-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}.gapcalc .scenario-inputs{display:grid;grid-template-columns:1fr 1fr;gap:14px}.gapcalc .scenario-result{border:1px solid var(--line);border-radius:16px;padding:18px;background:var(--soft)}.gapcalc .scenario-result .big{font-size:32px;font-weight:900;margin:3px 0}.gapcalc .simple-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0}.gapcalc .flow-box{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fff;min-width:0}.gapcalc .flow-box span{display:block;color:var(--muted);font-size:12px;line-height:1.3;margin-bottom:5px}.gapcalc .flow-box strong{display:block;font-size:clamp(14px,1.25vw,17px);line-height:1.2;white-space:nowrap;overflow-wrap:normal}.gapcalc .plain-result{border-radius:14px;padding:16px;margin-top:14px}.gapcalc .plain-result.loss{background:#fff1f0;border:1px solid #f6c7c3}.gapcalc .plain-result.profit{background:#edf9f2;border:1px solid #bfe5cf}.gapcalc .plain-result.neutral{background:#fff7e8;border:1px solid #f1d6a5}.gapcalc .plain-result .headline{font-size:22px;font-weight:900;line-height:1.25;margin-bottom:6px}.gapcalc .plain-result p{margin:0;color:var(--muted);line-height:1.5}.gapcalc .consistency-note{display:none;margin-top:14px;border-radius:12px;padding:12px 14px;background:#fff7e8;border:1px solid #f1d6a5;color:#7a4b00;font-size:13px;line-height:1.5}.gapcalc .scenario-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.gapcalc .scenario-stat{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}.gapcalc .scenario-stat span{display:block;color:var(--muted);font-size:12px;margin-bottom:4px}.gapcalc .scenario-stat strong{font-size:18px}.gapcalc .delta{font-weight:800;font-size:14px}.gapcalc .delta.positive{color:var(--good)}.gapcalc .delta.negative{color:var(--bad)}
 .gapcalc .cta p{color:var(--muted);line-height:1.55;max-width:760px}.gapcalc .cta-grid{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:14px;margin-top:18px}.gapcalc .cta button{margin-top:14px}.gapcalc .fine{font-size:12px;color:var(--muted);line-height:1.5;margin-top:12px}
-@media(max-width:800px){.gapcalc .input-grid,.gapcalc .results{grid-template-columns:1fr 1fr}.gapcalc .scenario-grid,.gapcalc .cta-grid{grid-template-columns:1fr}}@media(max-width:520px){.gapcalc .input-grid,.gapcalc .results,.gapcalc .scenario-inputs{grid-template-columns:1fr}.gapcalc .panel,.gapcalc .cta{padding:17px}}
+@media(max-width:800px){.gapcalc .input-grid,.gapcalc .results{grid-template-columns:1fr 1fr}.gapcalc .scenario-grid,.gapcalc .cta-grid{grid-template-columns:1fr}.gapcalc .simple-flow{grid-template-columns:1fr 1fr}}@media(max-width:520px){.gapcalc .input-grid,.gapcalc .results,.gapcalc .scenario-inputs,.gapcalc .simple-flow{grid-template-columns:1fr}.gapcalc .panel,.gapcalc .cta{padding:17px}}
 </style>
 <div class="gapcalc" id="gapcalc">
 <section class="hero"><div class="eyebrow">Google Ads Profitability Calculator</div><h1>Can your current Google Ads numbers actually make money?</h1><p>Estimate your break-even ROAS, maximum affordable click cost, and profit after ad spend in under a minute.</p></section>
 <section class="panel">
-<div class="section-head"><div><h2>Your current numbers</h2><div class="sub">Use one consistent period, such as the last 30 days.</div></div><div class="actions"><button type="button" class="primary" id="gcExample">Load Example Data</button><button type="button" class="secondary" id="gcClear">Clear</button></div></div>
-<div class="input-grid">
-<div><label for="gcSpend">Google Ads spend ($)</label><div class="unit-wrap"><span class="unit">$</span><input id="gcSpend" type="number" min="0" step="0.01" placeholder="3000"></div><small>Example: if you spent $3,000 on ads, enter 3000.</small></div>
-<div><label for="gcRevenue">Sales attributed to Google Ads ($)</label><div class="unit-wrap"><span class="unit">$</span><input id="gcRevenue" type="number" min="0" step="0.01" placeholder="7500"></div><small>Use sales revenue for the same period as your ad spend.</small></div>
-<div><label for="gcAov">Average sale amount per order ($)</label><div class="unit-wrap"><span class="unit">$</span><input id="gcAov" type="number" min="0" step="0.01" placeholder="75"></div><small>Example: total sales ÷ number of orders.</small></div>
-<div><label for="gcMargin">Gross product profit margin (%)</label><div class="unit-wrap suffix"><input id="gcMargin" type="number" min="0" max="100" step="0.1" placeholder="40"><span class="unit">%</span></div><small>Before advertising. Example: a $100 order with $60 product cost = 40%.</small></div>
-<div><label for="gcCpc">Average cost for one ad click ($)</label><div class="unit-wrap"><span class="unit">$</span><input id="gcCpc" type="number" min="0" step="0.01" placeholder="1.50"></div><small>Use your Google Ads average CPC for the same period.</small></div>
-<div><label for="gcCvr">How many ad visitors become buyers (%)</label><div class="unit-wrap suffix"><input id="gcCvr" type="number" min="0" max="100" step="0.01" placeholder="2.5"><span class="unit">%</span></div><small>Example: 2 buyers from every 100 ad clicks = 2%.</small></div>
-</div><div class="validation" id="gcValidation" aria-live="polite"></div></section>
+<div class="section-head">
+  <div><h2>Your current numbers</h2><div class="sub">Use one consistent period, such as the last 30 days.</div></div>
+  <div class="actions">
+    <button type="button" class="primary" id="gcExample">Load Example Data</button>
+    <button type="button" class="secondary" id="gcClear">Clear</button>
+  </div>
+</div>
+    <div class="input-group">
+      <div class="group-title">1. Your actual results</div>
+      <p class="group-copy">These three numbers determine your current estimated profit or loss.</p>
+
+      <div class="input-grid">
+        <div>
+          <label for="gcSpend">Google Ads spend ($)</label>
+          <div class="unit-wrap"><span class="unit">$</span><input id="gcSpend" type="number" min="0" step="0.01" placeholder="3000"></div>
+          <small>Example: if you spent $3,000 on Google Ads, enter 3000.</small>
+        </div>
+
+        <div>
+          <label for="gcRevenue">Sales attributed to Google Ads ($)</label>
+          <div class="unit-wrap"><span class="unit">$</span><input id="gcRevenue" type="number" min="0" step="0.01" placeholder="7500"></div>
+          <small>Use sales revenue from the same period as your ad spend.</small>
+        </div>
+
+        <div>
+          <label for="gcMargin">Profit margin before advertising (%)</label>
+          <div class="unit-wrap suffix"><input id="gcMargin" type="number" min="0" max="100" step="0.1" placeholder="40"><span class="unit">%</span></div>
+          <small>Example: If you sell an item for $100 and the product costs you $60, enter 40%.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <div class="group-title">2. Your advertising & sales metrics</div>
+      <p class="group-copy">These numbers help estimate your affordable CPC and power the future “What if?” scenarios.</p>
+
+      <div class="input-grid">
+        <div>
+          <label for="gcAov">Average sale amount per order ($)</label>
+          <div class="unit-wrap"><span class="unit">$</span><input id="gcAov" type="number" min="0" step="0.01" placeholder="75"></div>
+          <small>Used for affordable CPC and future scenarios. Changing this does not change the actual sales revenue you entered above.</small>
+        </div>
+
+        <div>
+          <label for="gcCpc">Average cost for one ad click ($)</label>
+          <div class="unit-wrap"><span class="unit">$</span><input id="gcCpc" type="number" min="0" step="0.01" placeholder="1.50"></div>
+          <small>Use your Google Ads average CPC for the same period.</small>
+        </div>
+
+        <div>
+          <label for="gcCvr">How many ad visitors become buyers (%)</label>
+          <div class="unit-wrap suffix"><input id="gcCvr" type="number" min="0" max="100" step="0.01" placeholder="2.5"><span class="unit">%</span></div>
+          <small id="gcCvrHelp">Enter your actual rate, or we will estimate it from your numbers when enough information is available.</small>
+        </div>
+      </div>
+</div>
+
+    <div class="validation" id="gcValidation" aria-live="polite"></div><div class="consistency-note" id="gcConsistency" aria-live="polite"></div></section>
 <section class="panel">
-<div class="section-head"><div><h2>Your estimated profitability</h2><div class="sub">These are simplified estimates based only on the numbers you enter.</div></div></div>
+<div class="section-head"><div><h2>Your current estimated profitability</h2><div class="sub">Current profit is calculated mainly from your ad spend, sales revenue, and profit margin before advertising.</div></div></div>
 <div class="results" aria-live="polite">
-<div class="metric"><span>Current ROAS</span><strong id="gcCurrentRoas">—</strong></div>
-<div class="metric"><span>Break-even ROAS</span><strong id="gcBreakEvenRoas">—</strong></div>
-<div class="metric"><span>Maximum affordable CPC</span><strong id="gcMaxCpc">—</strong></div>
-<div class="metric"><span>Gross profit before ads</span><strong id="gcGrossProfit">—</strong></div>
-<div class="metric"><span>Estimated profit/loss after ads</span><strong id="gcProfitAfterAds">—</strong></div>
-<div class="metric"><span>Revenue needed to break even</span><strong id="gcRevenueNeeded">—</strong></div>
+<div class="metric"><span>Current ROAS</span><strong id="gcCurrentRoas">—</strong><small>Based on sales revenue ÷ ad spend</small></div>
+<div class="metric"><span>Sales needed for every $1 spent to avoid losing money</span><strong id="gcBreakEvenRoas">—</strong><small>Based on your profit margin</small></div>
+<div class="metric"><span>Maximum affordable CPC</span><strong id="gcMaxCpc">—</strong><small>Based on average sale × margin × conversion rate</small></div>
+<div class="metric"><span>Profit left before paying for ads</span><strong id="gcGrossProfit">—</strong><small>Based on sales revenue × profit margin</small></div>
+<div class="metric"><span>Estimated profit/loss after ads</span><strong id="gcProfitAfterAds">—</strong><small>Profit left before paying for ads − ad spend</small></div>
+<div class="metric"><span>Revenue needed to break even</span><strong id="gcRevenueNeeded">—</strong><small>Based on ad spend and profit margin</small></div>
 </div>
 <div class="status-row"><span class="status-pill warn" id="gcStatusPill">Waiting for your numbers</span><p id="gcStatusText">Enter your current advertising and business numbers to see the estimate.</p></div>
+<div class="recommendation" aria-live="polite">
+  <div class="rec-label">Your next best step</div>
+  <p id="gcRecommendationText">Enter your ad spend, sales revenue and profit margin to get a recommendation based on your numbers.</p>
+</div>
 <div class="fine">This calculator does not include taxes, shipping, payment fees, overhead, agency fees, lifetime value, attribution errors, or other business costs unless they are already reflected in your gross margin.</div>
 </section>
 <section class="panel">
-<div class="section-head"><div><h2>What if your numbers improve?</h2><div class="sub">Change the key variables below without changing your original numbers.</div></div><button type="button" class="secondary" id="gcResetScenario">Reset to current numbers</button></div>
+<div class="section-head"><div><h2>What if your numbers improve?</h2><div class="sub" id="gcScenarioIntro">If your current estimate is negative, we’ll suggest a target conversion rate. If it’s positive, we’ll start with your current numbers. You can change any value.</div></div><button type="button" class="secondary" id="gcResetScenario">Reset to current numbers</button></div>
 <div class="scenario-grid"><div class="scenario-inputs">
 <div><label for="gcTargetCpc">Average click cost ($)</label><div class="unit-wrap"><span class="unit">$</span><input id="gcTargetCpc" type="number" min="0" step="0.01"></div></div>
-<div><label for="gcTargetCvr">Buyer conversion rate (%)</label><div class="unit-wrap suffix"><input id="gcTargetCvr" type="number" min="0" max="100" step="0.01"><span class="unit">%</span></div></div>
+<div>
+<label for="gcTargetCvr">Buyer conversion rate (%)</label>
+<div class="unit-wrap suffix"><input id="gcTargetCvr" type="number" min="0" max="100" step="0.01"><span class="unit">%</span></div>
+<small class="scenario-help" id="gcBreakEvenCvrNote">Enter CPC, average sale amount and margin to estimate the minimum conversion rate needed to cover product costs and ads.</small>
+</div>
 <div><label for="gcTargetAov">Average sale amount ($)</label><div class="unit-wrap"><span class="unit">$</span><input id="gcTargetAov" type="number" min="0" step="0.01"></div></div>
-<div><label for="gcTargetMargin">Gross margin (%)</label><div class="unit-wrap suffix"><input id="gcTargetMargin" type="number" min="0" max="100" step="0.1"><span class="unit">%</span></div></div>
-</div><div class="scenario-result"><div class="sub">Estimated profit after ads with these numbers</div><div class="big" id="gcScenarioProfit">—</div><div class="delta" id="gcScenarioDelta">Enter your current numbers first.</div><div class="scenario-stats"><div class="scenario-stat"><span>Estimated clicks</span><strong id="gcScenarioClicks">—</strong></div><div class="scenario-stat"><span>Estimated orders</span><strong id="gcScenarioOrders">—</strong></div></div><div class="fine" id="gcScenarioNote">Scenario uses the same ad budget and models clicks from the new CPC.</div></div></div>
-</section>
+<div><label for="gcTargetMargin">Profit margin before advertising (%)</label><div class="unit-wrap suffix"><input id="gcTargetMargin" type="number" min="0" max="100" step="0.1"><span class="unit">%</span></div></div>
+</div><div class="scenario-result">
+        <div class="sub">If you keep the same Google Ads budget and achieve these numbers:</div>
+
+        <div class="simple-flow">
+          <div class="flow-box">
+            <span>Ad budget</span>
+            <strong id="gcScenarioSpend">—</strong>
+          </div>
+          <div class="flow-box">
+            <span>Estimated clicks</span>
+            <strong id="gcScenarioClicks">—</strong>
+          </div>
+          <div class="flow-box">
+            <span>Estimated orders</span>
+            <strong id="gcScenarioOrders">—</strong>
+          </div>
+          <div class="flow-box">
+            <span>Estimated sales</span>
+            <strong id="gcScenarioRevenue">—</strong>
+          </div>
+        </div>
+
+        <div class="simple-flow">
+          <div class="flow-box">
+            <span>Profit left before paying for ads</span>
+            <strong id="gcScenarioGrossProfit">—</strong>
+          </div>
+          <div class="flow-box">
+            <span>Google Ads cost</span>
+            <strong id="gcScenarioAdCost">—</strong>
+          </div>
+          <div class="flow-box">
+            <span>Final profit / loss</span>
+            <strong id="gcScenarioProfit">—</strong>
+          </div>
+          <div class="flow-box">
+            <span>Compared with now</span>
+            <strong id="gcScenarioDelta">—</strong>
+          </div>
+        </div>
+
+        <div class="plain-result neutral" id="gcPlainResult">
+          <div class="headline" id="gcPlainHeadline">Enter your current numbers first.</div>
+          <p id="gcPlainMessage">Then change CPC, conversion rate, average sale amount or margin to see what could happen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 <section class="cta"><h2>Know your numbers. Need to know why your Google Ads are underperforming?</h2><p>A calculator can show the financial gap. A real account audit is needed to determine whether the cause is search terms, Performance Max structure, bidding, Merchant Center, conversion tracking, landing pages, or something else.</p>
 <div class="cta-grid"><div><label for="gcEmail">Email address</label><input id="gcEmail" name="email" type="email" placeholder="you@company.com"></div><div><label for="gcStore">Store URL</label><input id="gcStore" name="store_url" type="url" placeholder="https://yourstore.com"></div><div><label for="gcIssue">Main Google Ads problem</label><input id="gcIssue" name="main_issue" type="text" placeholder="Example: PMax is spending but sales are low"></div></div>
-<button type="button" class="primary" id="gcAuditBtn">Request an Expert Google Ads Audit</button><div class="validation" id="gcAuditStatus" aria-live="polite"></div><div class="fine"></div></section>
+<button type="button" class="primary" id="gcAuditBtn">Request an Expert Google Ads Audit</button><div class="validation" id="gcAuditStatus" aria-live="polite"></div><div class="fine">Your request is sent through the connected form. This calculator does not automatically access or audit your Google Ads account.</div></section>
 </div><script>(function(){
 const root=document.getElementById("gapcalc");if(!root||root.dataset.ready==="1")return;root.dataset.ready="1";
 const $=id=>root.querySelector("#"+id);const ids=["gcSpend","gcRevenue","gcAov","gcMargin","gcCpc","gcCvr"];const sids=["gcTargetCpc","gcTargetCvr","gcTargetAov","gcTargetMargin"];
+let cvrMode="auto";
+const hasValue=id=>!!$(id)&&$(id).value.trim()!=="";
+const inferCvr=()=>{
+  const spend=num("gcSpend"),revenue=num("gcRevenue"),aov=num("gcAov"),cpc=num("gcCpc");
+  if(!(spend>0&&revenue>0&&aov>0&&cpc>0))return null;
+  const clicks=spend/cpc,orders=revenue/aov;
+  const rate=clicks>0?(orders/clicks)*100:null;
+  return rate>0&&rate<=100?rate:null;
+};
+const breakEvenCvr=()=>{
+  const aov=num("gcAov"),margin=num("gcMargin")/100,cpc=num("gcCpc");
+  return aov>0&&margin>0&&margin<=1&&cpc>0?(cpc/(aov*margin))*100:null;
+};
 const num=id=>{const n=parseFloat($(id)?.value||"");return Number.isFinite(n)?n:0};const money=n=>Number.isFinite(n)?new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:2}).format(n):"—";const mult=n=>Number.isFinite(n)?n.toFixed(2)+"×":"—";
 function setStatus(type,label,text){$("gcStatusPill").className="status-pill "+type;$("gcStatusPill").textContent=label;$("gcStatusText").textContent=text}
-function valid(){return num("gcSpend")>0&&num("gcMargin")>0&&num("gcAov")>0&&num("gcCvr")>0}
-function sync(force){const map={gcTargetCpc:"gcCpc",gcTargetCvr:"gcCvr",gcTargetAov:"gcAov",gcTargetMargin:"gcMargin"};Object.keys(map).forEach(t=>{if(force||$(t).dataset.touched!=="1")$(t).value=num(map[t])||""})}
+const currentProfitValue=()=>num("gcRevenue")*(num("gcMargin")/100)-num("gcSpend");
+const currentInputsUnprofitable=()=>num("gcSpend")>0&&hasValue("gcRevenue")&&num("gcMargin")>0&&num("gcMargin")<=100&&currentProfitValue()<0;
+const scenarioBreakEvenCvr=()=>{
+  const cpc=num("gcTargetCpc"),aov=num("gcTargetAov"),margin=num("gcTargetMargin")/100;
+  return cpc>0&&aov>0&&margin>0&&margin<=1?(cpc/(aov*margin))*100:null;
+};
+const suggestedScenarioCvr=()=>{
+  if(currentInputsUnprofitable()){
+    const minimum=scenarioBreakEvenCvr();
+    if(minimum===null||minimum>100)return null;
+    const buffered=minimum*1.2;
+    return buffered<=100?buffered:minimum;
+  }
+  const current=num("gcCvr")>0?num("gcCvr"):inferCvr();
+  return current!==null&&current>0&&current<=100?current:null;
+};
+function updateScenarioGuidance(){
+  const intro=$("gcScenarioIntro"),note=$("gcBreakEvenCvrNote"),reset=$("gcResetScenario");
+  const minimum=scenarioBreakEvenCvr(),rate=num("gcTargetCvr");
+  const ready=num("gcSpend")>0&&hasValue("gcRevenue")&&num("gcMargin")>0&&num("gcMargin")<=100;
+  const unprofitable=currentInputsUnprofitable();
+  if(reset)reset.textContent=unprofitable?"Reset to suggested scenario":"Reset to current numbers";
+  if(intro){
+    if(!ready){
+      intro.textContent="Enter your current numbers first. If the estimate is negative, we’ll suggest a target conversion rate; if it’s positive, the scenario starts with your current numbers.";
+    }else if(unprofitable){
+      intro.textContent="Your current estimate is negative, so we’ve suggested a conversion-rate target above the ad-only break-even point. It’s a planning scenario, not a guarantee. You can edit any value.";
+    }else{
+      intro.textContent="Your current estimate is positive, so this scenario starts with your current numbers. Change one variable at a time to explore possible improvements.";
+    }
+  }
+  if(!note)return;
+  if(minimum===null){
+    note.textContent="Enter a positive click cost, average sale amount and profit margin to estimate the minimum conversion rate needed to cover product costs and ads.";
+  }else if(unprofitable){
+    const buffered=minimum*1.2;
+    if(buffered<=100){
+      const target=buffered;
+      if(rate>0&&Math.abs(rate-target)<0.01){
+        note.textContent="Suggested target: "+target.toFixed(2)+"% conversion rate — 20% above the estimated ad-only break-even rate of "+minimum.toFixed(2)+"%. This is a planning target, not a guarantee. Aim higher to cover other business costs.";
+      }else{
+        note.textContent="Suggested target: "+target.toFixed(2)+"% conversion rate — 20% above the estimated ad-only break-even rate of "+minimum.toFixed(2)+"%. Your scenario is currently set to "+(rate>0?rate.toFixed(2)+"%":"no conversion rate")+". This is a planning target, not a guarantee; aim higher to cover other business costs.";
+      }
+    }else if(minimum<=100){
+      note.textContent="A 20% safety buffer would require "+buffered.toFixed(2)+"%, which is above 100%. The break-even rate is "+minimum.toFixed(2)+"%; your scenario is currently set to "+(rate>0?rate.toFixed(2)+"%":"no conversion rate")+". To leave room for other costs, reduce CPC or improve average sale amount or margin.";
+    }else{
+      note.textContent="At these inputs, even a 100% conversion rate would not cover product costs and ads. Reduce CPC or improve average sale amount or margin to make the economics more workable.";
+    }
+  }else if(rate>0){
+    note.textContent="Your current estimate is positive. Your scenario is set to "+rate.toFixed(2)+"% conversion rate. The estimated minimum to cover product costs and ads at these scenario inputs is "+minimum.toFixed(2)+"%. Aim higher to allow for other business costs.";
+  }else{
+    note.textContent="Enter your actual conversion rate, or provide enough current data for us to estimate it. The minimum conversion rate at these scenario inputs is "+minimum.toFixed(2)+"%.";
+  }
+}
+
+function valid(){return num("gcSpend")>0&&hasValue("gcRevenue")&&num("gcRevenue")>=0&&num("gcMargin")>0&&num("gcMargin")<=100&&num("gcAov")>0}
+function sync(force){
+  const map={gcTargetCpc:"gcCpc",gcTargetAov:"gcAov",gcTargetMargin:"gcMargin"};
+  Object.keys(map).forEach(t=>{if(force||$(t).dataset.touched!=="1")$(t).value=num(map[t])||""});
+  if(force||$("gcTargetCvr").dataset.touched!=="1"){
+    const rate=suggestedScenarioCvr();
+    $("gcTargetCvr").value=rate!==null&&rate>0?rate.toFixed(2):"";
+  }
+  updateScenarioGuidance();
+}
 function scenario(){
-if(!valid()){
-  $("gcScenarioProfit").textContent="—";
-  $("gcScenarioDelta").textContent="Enter your current numbers first.";
-  $("gcScenarioDelta").className="delta";
-  $("gcScenarioClicks").textContent="—";
-  $("gcScenarioOrders").textContent="—";
-  $("gcScenarioNote").textContent="Scenario uses the same ad budget and models clicks from the new CPC.";
-  return
-}
-const spend=num("gcSpend"),
-      revenue=num("gcRevenue"),
-      bm=num("gcMargin")/100,
-      tc=num("gcTargetCpc"),
-      tr=num("gcTargetCvr")/100,
-      ta=num("gcTargetAov"),
-      tm=num("gcTargetMargin")/100;
+  const spend=num("gcSpend");
+  const revenue=num("gcRevenue");
+  const baseMargin=num("gcMargin")/100;
+  const tc=num("gcTargetCpc");
+  const tr=num("gcTargetCvr")/100;
+  const ta=num("gcTargetAov");
+  const tm=num("gcTargetMargin")/100;
 
-if(!(tc>0&&tr>0&&ta>0&&tm>0)){
-  $("gcScenarioProfit").textContent="—";
-  $("gcScenarioDelta").textContent="Complete the scenario values to see the estimate.";
-  $("gcScenarioDelta").className="delta";
-  $("gcScenarioClicks").textContent="—";
-  $("gcScenarioOrders").textContent="—";
-  return
+  const plain=$("gcPlainResult");
+
+  if(!valid()){
+    $("gcScenarioSpend").textContent="—";
+    $("gcScenarioClicks").textContent="—";
+    $("gcScenarioOrders").textContent="—";
+    $("gcScenarioRevenue").textContent="—";
+    $("gcScenarioGrossProfit").textContent="—";
+    $("gcScenarioAdCost").textContent="—";
+    $("gcScenarioProfit").textContent="—";
+    $("gcScenarioDelta").textContent="—";
+    $("gcPlainHeadline").textContent="Complete the current numbers first.";
+    $("gcPlainMessage").textContent="Enter ad spend, sales revenue, average sale amount and margin. If a conversion rate cannot be estimated from your numbers, enter your actual rate to run the scenario.";
+    plain.className="plain-result neutral";
+    return
+  }
+
+  if(!(tc>0&&tr>0&&ta>0&&tm>0)){
+    $("gcScenarioSpend").textContent="—";
+    $("gcScenarioClicks").textContent="—";
+    $("gcScenarioOrders").textContent="—";
+    $("gcScenarioRevenue").textContent="—";
+    $("gcScenarioGrossProfit").textContent="—";
+    $("gcScenarioAdCost").textContent="—";
+    $("gcScenarioProfit").textContent="—";
+    $("gcScenarioDelta").textContent="—";
+    const minimum=scenarioBreakEvenCvr();
+    if(currentInputsUnprofitable()&&minimum!==null&&minimum>100){
+      $("gcPlainHeadline").textContent="Conversion rate alone cannot solve this.";
+      $("gcPlainMessage").textContent="At the current scenario CPC, average sale amount and profit margin, even a 100% conversion rate would not cover product costs and Google Ads. Try a lower CPC, higher average sale amount or higher margin; the suggested target will update automatically.";
+    }else{
+      $("gcPlainHeadline").textContent="Complete the scenario numbers.";
+      $("gcPlainMessage").textContent="Enter CPC, conversion rate, average sale amount and profit margin to see the result.";
+    }
+    plain.className="plain-result neutral";
+    updateScenarioGuidance();
+    return
+  }
+
+  const clicks=spend/tc;
+  const orders=clicks*tr;
+  const scenarioRevenue=orders*ta;
+  const scenarioGrossProfit=scenarioRevenue*tm;
+  const scenarioProfit=scenarioGrossProfit-spend;
+  const currentProfit=revenue*baseMargin-spend;
+  const delta=scenarioProfit-currentProfit;
+
+  $("gcScenarioSpend").textContent=money(spend);
+  $("gcScenarioClicks").textContent=Math.round(clicks).toLocaleString("en-US");
+  $("gcScenarioOrders").textContent=orders.toFixed(1);
+  $("gcScenarioRevenue").textContent=money(scenarioRevenue);
+  $("gcScenarioGrossProfit").textContent=money(scenarioGrossProfit);
+  $("gcScenarioAdCost").textContent=money(spend);
+  $("gcScenarioProfit").textContent=money(scenarioProfit);
+  $("gcScenarioDelta").textContent=(delta>=0?"+":"")+money(delta);
+
+  if(scenarioProfit<0){
+    plain.className="plain-result loss";
+    $("gcPlainHeadline").textContent="You would still lose about "+money(Math.abs(scenarioProfit))+".";
+    $("gcPlainMessage").textContent=
+      "With "+money(tc)+" CPC, "+(tr*100).toFixed(2)+"% conversion rate, "+money(ta)+
+      " average order value and "+(tm*100).toFixed(1)+"% margin, the sales generated would still not leave enough gross profit to cover the "+money(spend)+" ad spend.";
+  }else if(Math.abs(scenarioProfit)<1){
+    plain.className="plain-result neutral";
+    $("gcPlainHeadline").textContent="You would be approximately at break-even.";
+    $("gcPlainMessage").textContent=
+      "These numbers would roughly cover product costs and Google Ads, but would leave little or no room for other business expenses.";
+  }else{
+    plain.className="plain-result profit";
+    $("gcPlainHeadline").textContent="You could keep about "+money(scenarioProfit)+" after product costs and Google Ads.";
+    $("gcPlainMessage").textContent=
+      "With "+money(tc)+" CPC, "+(tr*100).toFixed(2)+"% conversion rate, "+money(ta)+
+      " average order value and "+(tm*100).toFixed(1)+"% margin, this scenario is above the simplified break-even point before other business costs.";
+  }
 }
 
-const clicks=spend/tc;
-const orders=clicks*tr;
-const trev=orders*ta;
-const tp=trev*tm-spend;
-const bp=revenue*bm-spend;
-const d=tp-bp;
+function calc(){
+  const inferred=inferCvr();
+  if(cvrMode==="auto"){
+    $("gcCvr").value=inferred===null?"":inferred.toFixed(2);
+  }
 
-$("gcScenarioProfit").textContent=money(tp);
-$("gcScenarioDelta").textContent=(d>=0?"+":"")+money(d)+" compared with your current estimate.";
-$("gcScenarioDelta").className="delta "+(d>=0?"positive":"negative");
-$("gcScenarioClicks").textContent=Math.round(clicks).toLocaleString("en-US");
-$("gcScenarioOrders").textContent=orders.toFixed(1);
-$("gcScenarioNote").textContent="At "+money(tc)+" CPC and "+(tr*100).toFixed(2)+"% conversion rate, the same "+money(spend)+" ad budget could generate about "+Math.round(clicks).toLocaleString("en-US")+" clicks and "+orders.toFixed(1)+" orders.";
+  const spend=num("gcSpend"),rev=num("gcRevenue"),aov=num("gcAov");
+  const mp=num("gcMargin"),cpc=num("gcCpc"),cvrp=num("gcCvr");
+  const m=mp/100,cvr=cvrp/100;
+  const hasSpend=hasValue("gcSpend")&&spend>0;
+  const hasRevenue=hasValue("gcRevenue")&&rev>=0;
+  const hasMargin=hasValue("gcMargin")&&mp>0&&mp<=100;
+  const hasAov=hasValue("gcAov")&&aov>0;
+  const hasCpc=hasValue("gcCpc")&&cpc>0;
+  const hasCvr=hasValue("gcCvr")&&cvrp>0&&cvrp<=100;
+  const coreReady=hasSpend&&hasRevenue&&hasMargin;
+  const beCvr=breakEvenCvr();
+  const consistency=$("gcConsistency");
+  consistency.style.display="none";
+  consistency.textContent="";
+  $("gcValidation").textContent="";
+
+  if(mp>100||cvrp>100){
+    $("gcValidation").textContent="Profit margin and conversion rate cannot be above 100%.";
+  }
+
+  // Explain whether the current conversion rate was estimated or entered by the user.
+  if(cvrMode==="manual"){
+    if(hasCvr&&beCvr!==null){
+      $("gcCvrHelp").textContent="Using the rate you entered. Estimated minimum to cover product costs and ads: "+beCvr.toFixed(2)+"%. Aim higher to allow for other business costs.";
+    }else{
+      $("gcCvrHelp").textContent="Using the rate you entered. To estimate the minimum needed, enter a positive CPC, average sale amount and profit margin.";
+    }
+  }else if(inferred!==null){
+    $("gcCvrHelp").textContent="Estimated at "+inferred.toFixed(2)+"% from your sales, ad spend, average sale amount and CPC. Enter your actual rate to override this estimate.";
+  }else{
+    $("gcCvrHelp").textContent="We will estimate this from sales, ad spend, average sale amount and CPC once all four are entered. You can also enter your actual rate.";
+  }
+
+  // Each result appears as soon as its required inputs are available.
+  $("gcCurrentRoas").textContent=(hasSpend&&hasRevenue)?mult(rev/spend):"—";
+  $("gcBreakEvenRoas").textContent=hasMargin?mult(1/m):"—";
+  $("gcMaxCpc").textContent=(hasAov&&hasMargin&&hasCvr)?money(aov*m*cvr):"—";
+  $("gcGrossProfit").textContent=(hasRevenue&&hasMargin)?money(rev*m):"—";
+  $("gcProfitAfterAds").textContent=coreReady?money(rev*m-spend):"—";
+  $("gcRevenueNeeded").textContent=(hasSpend&&hasMargin)?money(spend/m):"—";
+
+  if(!coreReady){
+    setStatus("warn","Waiting for your numbers","Enter Google Ads spend, sales attributed to Google Ads, and profit margin before advertising to estimate current profit or loss.");
+    $("gcRecommendationText").textContent="Once those three numbers are entered, this tool will estimate your current result and suggest the next priority. CPC, average sale amount and margin help estimate the conversion rate needed to cover product costs and ads.";
+  }else{
+    const roas=rev/spend,profit=rev*m-spend,be=1/m,ratio=roas/be;
+    if(profit < -1){
+      setStatus("bad","Estimated unprofitable","Based on your entered sales and margin, gross profit from ad-attributed sales does not cover Google Ads spend.");
+      if(beCvr!==null){
+        $("gcRecommendationText").textContent="Your numbers show an estimated loss of "+money(Math.abs(profit))+" after product costs and Google Ads, before any other costs. Your CPC, average sale amount and margin suggest you need at least about "+beCvr.toFixed(2)+"% conversion rate to cover product costs and ads. Compare this with your actual rate; if it is below the target, test reducing CPC or improving conversion rate, and verify that sales and margin inputs are accurate.";
+      }else{
+        $("gcRecommendationText").textContent="Your numbers show an estimated loss of "+money(Math.abs(profit))+" after product costs and Google Ads, before any other costs. First verify your attributed sales and margin, then test whether lower CPC, a better conversion rate, or a higher average order value can improve the economics.";
+      }
+    }else if(Math.abs(profit)<=1){
+      setStatus("warn","Near the no-loss point","Your current numbers are approximately covering product costs and Google Ads, leaving little room for other business expenses.");
+      $("gcRecommendationText").textContent=(beCvr!==null?"Your estimated minimum conversion rate is "+beCvr.toFixed(2)+"% just to cover product costs and ads. ":"Your current estimate is around the no-loss point. ")+ "Aim for a buffer above this level or reduce CPC before increasing budget. Include shipping, payment fees, returns and overhead when judging real profitability.";
+    }else if(ratio<1.15){
+      setStatus("warn","Positive, but close to the no-loss point","Your numbers are above the simplified break-even level, but the safety margin is thin.");
+      $("gcRecommendationText").textContent="Your entered numbers leave about "+money(profit)+" after product costs and Google Ads, before other costs, but the margin is still close to the no-loss point. Prioritize creating a bigger buffer by improving conversion rate, lowering CPC or increasing average order value. Avoid scaling aggressively until other costs are included.";
+    }else if(beCvr!==null&&hasCvr&&cvrp+0.005<beCvr){
+      setStatus("warn","Check that your numbers match","Your entered sales suggest positive profit, but the conversion rate you entered is below the estimated ad-only break-even rate.");
+      $("gcRecommendationText").textContent="Your sales and margin inputs suggest positive profit, but your conversion rate is below the "+beCvr.toFixed(2)+"% estimated minimum for your current CPC and average sale amount. These figures may use different periods or definitions. Check spend, attributed revenue, average order value, CPC and conversion rate before changing campaigns.";
+    }else{
+      setStatus("good","Positive estimated profit before other costs","Your current numbers are above the simplified break-even level. This does not automatically mean the account is safe to scale.");
+      $("gcRecommendationText").textContent="Your entered numbers leave about "+money(profit)+" after product costs and Google Ads, before other business costs. Protect that margin, confirm shipping, payment fees and returns are accounted for, then test one improvement at a time. Increase budget gradually only if additional sales remain profitable.";
+    }
+  }
+
+  // Flag mismatched numbers only when the user supplied a conversion rate manually.
+  if(hasSpend&&hasRevenue&&hasAov&&hasCpc&&hasCvr&&cvrMode==="manual"&&rev>0){
+    const impliedRevenue=(spend/cpc)*cvr*aov;
+    const difference=Math.abs(impliedRevenue-rev)/rev;
+    if(difference>0.20){
+      consistency.style.display="block";
+      consistency.textContent="Quick check: your spend, CPC, conversion rate and average sale amount imply about "+money(impliedRevenue)+" in sales, but you entered "+money(rev)+". Make sure all numbers use the same time period and source.";
+    }
+  }
+
+  sync(false);
+  scenario();
 }
-function calc(){const spend=num("gcSpend"),rev=num("gcRevenue"),aov=num("gcAov"),mp=num("gcMargin"),cvrp=num("gcCvr");$("gcValidation").textContent="";if(mp>100||cvrp>100){$("gcValidation").textContent="Margin and conversion rate cannot be above 100%.";return}
-if(!valid()){["gcCurrentRoas","gcBreakEvenRoas","gcMaxCpc","gcGrossProfit","gcProfitAfterAds","gcRevenueNeeded"].forEach(id=>$(id).textContent="—");setStatus("warn","Waiting for your numbers","Enter your current advertising and business numbers to see the estimate.");sync(false);scenario();return}
-const m=mp/100,cvr=cvrp/100,roas=rev>0?rev/spend:0,be=1/m,maxc=aov*m*cvr,gp=rev*m,profit=gp-spend,need=spend/m;$("gcCurrentRoas").textContent=mult(roas);$("gcBreakEvenRoas").textContent=mult(be);$("gcMaxCpc").textContent=money(maxc);$("gcGrossProfit").textContent=money(gp);$("gcProfitAfterAds").textContent=money(profit);$("gcRevenueNeeded").textContent=money(need);
-const ratio=be>0?roas/be:0;if(profit<0)setStatus("bad","Estimated unprofitable","Based on the numbers entered, gross profit from ad-attributed sales does not currently cover Google Ads spend.");else if(ratio<1.15)setStatus("warn","Near break-even / high risk","Your current numbers are only slightly above the estimated no-loss level, leaving little room for other business costs or measurement error.");else setStatus("good","Estimated profitable before other costs","Your current numbers are above the simplified break-even level. This does not mean the account is automatically safe to scale.");
-sync(false);scenario()}
-ids.forEach(id=>$(id).addEventListener("input",calc));sids.forEach(id=>$(id).addEventListener("input",()=>{$(id).dataset.touched="1";scenario()}));
-$("gcExample").addEventListener("click",()=>{const d={gcSpend:3000,gcRevenue:7500,gcAov:75,gcMargin:40,gcCpc:1.5,gcCvr:2.5};Object.entries(d).forEach(([id,v])=>$(id).value=v);sids.forEach(id=>delete $(id).dataset.touched);sync(true);calc()});
-$("gcClear").addEventListener("click",()=>{ids.concat(sids).forEach(id=>{$(id).value="";delete $(id).dataset.touched});calc()});
+ids.filter(id=>id!=="gcCvr").forEach(id=>$(id).addEventListener("input",calc));
+$("gcCvr").addEventListener("input",()=>{cvrMode="manual";calc()});
+sids.forEach(id=>$(id).addEventListener("input",()=>{
+  $(id).dataset.touched="1";
+  if(id!=="gcTargetCvr"&&$("gcTargetCvr").dataset.touched!=="1"&&currentInputsUnprofitable()){
+    const rate=suggestedScenarioCvr();
+    $("gcTargetCvr").value=rate!==null&&rate>0?rate.toFixed(2):"";
+  }
+  updateScenarioGuidance();
+  scenario();
+}));
+$("gcExample").addEventListener("click",()=>{cvrMode="manual";const d={gcSpend:3000,gcRevenue:9000,gcAov:75,gcMargin:40,gcCpc:1.5,gcCvr:6};Object.entries(d).forEach(([id,v])=>$(id).value=v);sids.forEach(id=>delete $(id).dataset.touched);sync(true);calc()});
+$("gcClear").addEventListener("click",()=>{cvrMode="auto";ids.concat(sids).forEach(id=>{$(id).value="";delete $(id).dataset.touched});calc()});
 $("gcResetScenario").addEventListener("click",()=>{sids.forEach(id=>delete $(id).dataset.touched);sync(true);scenario()});
 $("gcAuditBtn").addEventListener("click",async()=>{
   const btn=$("gcAuditBtn");
@@ -140,7 +455,7 @@ $("gcAuditBtn").addEventListener("click",async()=>{
   payload.append("current_roas",currentRoas?currentRoas.toFixed(2):"");
   payload.append("break_even_roas",breakEvenRoas?breakEvenRoas.toFixed(2):"");
   payload.append("estimated_profit_after_ads",Number.isFinite(profitAfterAds)?profitAfterAds.toFixed(2):"");
-  payload.append("_subject","New Google Ads Profitability Audit Lead");
+  payload.append("_subject","New Google Ads Profitability Calculator Lead");
   payload.append("source","Google Ads Profitability Calculator");
 
   btn.disabled=true;
